@@ -5,12 +5,14 @@ export class LoginPage {
     private usernameInput: Locator;
     private passwordInput: Locator;
     private loginButton: Locator;
+    
 
     constructor(page: Page) {
         this.page = page;
         this.usernameInput = page.getByPlaceholder('UserName');
         this.passwordInput = page.getByPlaceholder('Password');
         this.loginButton = page.getByRole('button', { name: 'Login' });
+        
     }
 
     async goto() {
@@ -28,5 +30,9 @@ export class LoginPage {
 
     get logoutButton() {
         return this.page.getByText('Logout');
+    }
+
+     get errorMessage(){
+        return this.page.getByText('Invalid username or password!')
     }
 }
