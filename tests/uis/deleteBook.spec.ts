@@ -1,5 +1,5 @@
-import { test, expect } from '../fixtures/test-fixtures';
-import user from '../test-data/user.json';
+import { test, expect } from '../../fixtures/test-fixtures';
+import user from '../../test-data/user.json'
 
 test('Delete a book successfully', async ({
   loginPage,

@@ -1,5 +1,5 @@
-import { test, expect } from '../fixtures/test-fixtures';
-import { searchKeywords } from '../test-data/searchData';
+import { test, expect } from '../../fixtures/test-fixtures';
+import { searchKeywords } from '../../test-data/searchData';
 
 test.describe('Search book with multiple results', () => {
 
