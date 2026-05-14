@@ -1,18 +1,18 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from '../pages/basePage';
 
-export class LoginPage {
-    private page: Page;
+export class LoginPage extends BasePage {
     private usernameInput: Locator;
     private passwordInput: Locator;
     private loginButton: Locator;
-    
+
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.usernameInput = page.getByPlaceholder('UserName');
         this.passwordInput = page.getByPlaceholder('Password');
         this.loginButton = page.getByRole('button', { name: 'Login' });
-        
+
     }
 
     async goto() {
@@ -29,10 +29,10 @@ export class LoginPage {
     }
 
     get logoutButton() {
-        return this.page.getByText('Logout');
+        return this.page.getByRole('button', { name: 'Logout' });
     }
 
-     get errorMessage(){
-        return this.page.getByText('Invalid username or password!')
+    get errorMessage() {
+        return this.page.getByText('Invalid username or password!');
     }
 }

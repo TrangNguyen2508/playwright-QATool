@@ -1,10 +1,12 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from '../pages/basePage';
 
-export class BookStorePage {
+export class BookStorePage extends BasePage {
   private searchInput: Locator;
   private bookItems: Locator;
 
-  constructor(private page: Page) {
+  constructor(page: Page) {
+    super(page);
     this.searchInput = page.locator('#searchBox');
     this.bookItems = page.locator('a[href*="books?search"]');
   }

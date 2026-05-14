@@ -1,14 +1,14 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from '../pages/basePage';
 
-export class ProfilePage {
-  private page: Page;
+export class ProfilePage extends BasePage {
   private confirmDeleteButton: Locator;
   private searchBox: Locator;
 
 
   constructor(page: Page) {
-    this.page = page;
-    this.confirmDeleteButton = page.getByRole('button', { name: 'OK', exact: true })
+    super(page);
+    this.confirmDeleteButton = page.getByRole('button', { name: 'OK', exact: true });
     this.searchBox = page.locator('#searchBox');
   }
 
