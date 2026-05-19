@@ -4,8 +4,7 @@ import { users } from '../../test-data/userData';
 
 test.describe('Login Feature', () => {
 
-  users.forEach(user => {
-
+  for (const user of users){
     test(`Login - ${user.name}`, async ({ page }) => {
       const loginPage = new LoginPage(page);
 
@@ -19,7 +18,6 @@ test.describe('Login Feature', () => {
       }
 
     });
-
-  });
+  }
 
 });
