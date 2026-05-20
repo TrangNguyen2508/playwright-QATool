@@ -8,5 +8,5 @@
     "resolveJsonModule": true,
     "strict": true
   },
-  "include": ["tests", "playwright.config.ts", "tests/apis/bookStore.spec.ts", "tests/apis/deleteBook.spec.ts"]
+  "include": ["tests", "playwright.config.ts", "tests/api/bookStore.spec.ts", "tests/api/deleteBook.spec.ts"]
 }
