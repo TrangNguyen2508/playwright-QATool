@@ -54,7 +54,7 @@ test('Bookstore flow', async ({ request }) => {
         )
 
 
-        expect(findAddedBookResponse.status).toBe(200)
+        expect(findAddedBookResponse.status()).toBe(200)
 
         expect(addedBook).toBeDefined()
 
